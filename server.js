@@ -79,7 +79,7 @@ http.listen(4000, function() {
 
 process.on('SIGINT',function(){
    console.log('Closing Express Server');
-   app.close();
+   http.close();
 });
 // // app.js
 // var express = require('express');
