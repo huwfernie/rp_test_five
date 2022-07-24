@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+    <head>
+      <link rel="stylesheet" href="styles.css" />
+      <title>Test Four</title>
+    </head>
+    <body>
+        <h1>Hello, World</h1>
+        <h2>Test Four</h2>
+        <div class="buttons">
+          <label class="check-box" for="request-audio">
+            <input type="checkbox" class="check-box__switcher" id='request-audio'>
+            request-audio
+          </label>
+          <label class="check-box" for="request-video">
+            <input type="checkbox" class="check-box__switcher" id='request-video'>
+            request-video
+          </label>
+          <label class="check-box" for="send-audio">
+            <input type="checkbox" class="check-box__switcher" id='send-audio' data-target-el=".audio.local">
+            send-audio
+          </label>
+        </div>
+        <div class="grid">
+          <div class="video remote"><video autoplay muted class="local-video" id="remote-video"></video></div>
+          <div class="audio local"><audio></audio><span class="slider"></span></div>
+          <div class="audio remote"><audio id="remote-audio"></audio><span class="slider"></span></div>
+        </div>
+    </body>
+    <script src = "/socket.io/socket.io.js"></script>
+    <script src="app.js"></script>
+</html>

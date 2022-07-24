@@ -1,0 +1,19 @@
+{
+  "name": "test_four",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "serve": "node server.js",
+    "dev": "npm run serve & open http://localhost:4000",
+    "cleanup": "pkill nodejs && pkill node"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.1",
+    "socket.io": "^4.5.1",
+    "web-audio-api": "^0.2.2"
+  }
+}
