@@ -2,7 +2,8 @@ const express = require('express');
 const app = express();
 const http = require('http').Server(app);
 const io = require('socket.io')(http);
-const fs = require('fs');
+// const fs = require('fs');
+
 const helper = require('./helpers/helper');
 const nodeAudio = require('./helpers/simple-node-audio');
 
@@ -44,8 +45,13 @@ io.on('connection', function(socket) {
 
   socket.on('request_audio', (data) => {
     console.log('request_audio', data);
-    const stream = nodeAudio.openStream();
-    console.log(stream);
+    if (data === true) {
+      console.log('true');
+    } else {
+      console.log('false');
+    }
+    // const stream = nodeAudio.openStream();
+    // console.log(stream);
   });
 
   socket.on('request_video', (data) => {
@@ -72,8 +78,8 @@ http.listen(4000, function() {
 });
 
 process.on('SIGINT',function(){
-   console.log('Closing database pool');
-   server.close();
+   console.log('Closing Express Server');
+   app.close();
 });
 // // app.js
 // var express = require('express');

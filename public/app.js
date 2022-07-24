@@ -21,15 +21,17 @@ function init() {
 
 
   document.querySelector('#request-audio').addEventListener('change', (e) => {
-    // callUser();
+    console.log('request_audio : ', Boolean(e.target.checked));
     socket.emit('request_audio', Boolean(e.target.checked));
   });
 
   document.querySelector('#request-video').addEventListener('change', (e) => {
+    console.log('request_video : ', Boolean(e.target.checked));
     socket.emit('request_video', Boolean(e.target.checked));
   });
 
   document.querySelector('#send-audio').addEventListener('change', (e) => {
+    console.log('send_audio : ', Boolean(e.target.checked));
     socket.emit('send_audio', Boolean(e.target.checked));
   });
 }
