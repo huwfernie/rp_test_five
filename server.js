@@ -75,6 +75,7 @@ io.on('connection', function(socket) {
 
 http.listen(4000, function() {
   console.log('listening on *:4000');
+  console.log('Try :: open http://192.168.1.169:4000/');
 });
 
 process.on('SIGINT',function(){

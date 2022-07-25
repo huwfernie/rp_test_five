@@ -14,4 +14,4 @@ clone this repo, then on the Raspberry Pi run:
 
 And then on the browser (on the same network):
 
-`open http://192.168.1.165:4000/`
+`open http://192.168.1.169:4000/`
