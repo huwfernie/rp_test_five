@@ -4,14 +4,14 @@ const http = require('http').Server(app);
 const io = require('socket.io')(http);
 // const fs = require('fs');
 
-const helper = require('./helpers/helper');
-const nodeAudio = require('./helpers/simple-node-audio');
+// const helper = require('./helpers/helper');
+// const nodeAudio = require('./helpers/simple-node-audio');
 
-app.use(express.static(__dirname + '/public'));
+//Static Routes
+app.use('/', express.static(path.join(__dirname, '/public')));
 
-app.get('/', function(req, res) {
-  res.sendfile('index.html');
-});
+//Main App Route
+app.get('/', (req, res, next) => res.sendFile(path.join(__dirname, 'index.html')));
 
 // helper.speak();
 
