@@ -2,7 +2,7 @@
 const whatsMyIp = require('./helpers/whats-my-ip');
 
 async function find() {
-  console.log('find');
+  // console.log('find');
   let ip = await whatsMyIp();
   ip = ip.split('wlan0')[1].split('inet ')[1].split('  netmask')[0];
   return ip;
