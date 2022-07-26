@@ -1,4 +1,4 @@
-//Requires
+// Requires
 const whatsMyIp = require('./helpers/whats-my-ip');
 
 async function find() {
@@ -8,9 +8,11 @@ async function find() {
   return ip;
 }
 
-const ip = find();
-console.log(`Raspberry Pi ip address : ${ip}`);
-
+async function app() {
+  const ip = await find();
+  console.log(`Raspberry Pi ip address : ${ip}`);
+}
+app();
 /*
 const text = `eth0: flags=4099<UP,BROADCAST,MULTICAST>  mtu 1500
         ether b8:27:eb:10:4a:74  txqueuelen 1000  (Ethernet)
