@@ -1,7 +1,11 @@
-//Requires
+// Requires
 const express = require('express');
 const app = express();
 const path = require('path');
+
+// Helpers
+const whatsMyIp = require('./helpers/whats-my-ip');
+const commandLine = require('./helpers/command-line');
 
 //Static Routes
 app.use('/', express.static(path.join(__dirname, '/public')));
@@ -12,9 +16,19 @@ app.get('/', (req, res, next) => {
   }
 );
 
+//Form Route
+app.post('/', (req, res, next) => {
+    res.send({data: 'testData'});
+  }
+);
+
 //Run Server
-const port = 4000;
-app.listen(port, () => {
-  console.log(`Listening intently on port ${port}`);
-  console.log('Try :: open http://192.168.1.169:4000/');
+app.listen(port, async () => {
+  const port = 4000;
+  const ip = '192.168.1.169' || await whatsMyIp();
+  console.log(`Listening on port ${port}`);
+  console.log(`Try :: open http://${ip}:${port}/`);
 });
+
+const command = 'ffmpeg -ar 8000  -ac 1 -f alsa -i hw:1,0 -ac 1 -acodec mp2 -b:a 128k -f rtp rtp://192.168.1.169:4001'
+commandLine(command);
