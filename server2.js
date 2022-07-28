@@ -25,10 +25,10 @@ app.post('/', (req, res, next) => {
 //Run Server
 app.listen(port, async () => {
   const port = 4000;
-  const ip = '192.168.1.169' || await whatsMyIp();
+  const ip = '192.168.1.173' || await whatsMyIp();
   console.log(`Listening on port ${port}`);
   console.log(`Try :: open http://${ip}:${port}/`);
 });
 
-const command = 'ffmpeg -ar 8000  -ac 1 -f alsa -i hw:1,0 -ac 1 -acodec mp2 -b:a 128k -f rtp rtp://192.168.1.169:4001'
+const command = 'ffmpeg -ar 8000 -t 60 -ac 1 -f alsa -i hw:1,0 -ac 1 -acodec mp2 -b:a 128k -f rtp rtp://192.168.1.173:4001'
 commandLine(command);
