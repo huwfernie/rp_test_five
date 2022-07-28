@@ -23,8 +23,8 @@ app.post('/', (req, res, next) => {
 );
 
 //Run Server
+const port = 4000;
 app.listen(port, async () => {
-  const port = 4000;
   const ip = '192.168.1.173' || await whatsMyIp();
   console.log(`Listening on port ${port}`);
   console.log(`Try :: open http://${ip}:${port}/`);
