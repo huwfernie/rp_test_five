@@ -24,8 +24,7 @@
         <div class="grid">
           <div class="video remote"><video autoplay muted class="local-video" id="remote-video"></video></div>
           <div class="audio local"><audio></audio><span class="slider"></span></div>
-          <div class="audio remote"><audio id="remote-audio"></audio><span class="slider"></span></div>
-          <video src="rtp://192.168.1.173:4001">Your browser does not support the VIDEO tag and/or RTP streams.</video>
+          <div class="audio remote"><audio id="remote-audio" src="http://192.168.1.173:8000/rapi.mp3" controls></audio><span class="slider"></span></div>
         </div>
     </body>
     <script src = "/socket.io/socket.io.js"></script>
