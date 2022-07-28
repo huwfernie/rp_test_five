@@ -35,7 +35,6 @@ app.listen(port, async () => {
 
 const proc = require('child_process').spawn('/home/pi/darkice.sh');
 process.on('SIGINT', () => {
-  console.log('Stopping darkice');
   proc.kill('SIGINT');
-  console.log('Stopped darkice');
+  process.exit(0);
 });
